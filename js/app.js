@@ -30,10 +30,11 @@
 let winner;
 let playerTotal = 0;
 let dealerTotal;
+let playerTurn = true;
 
 // cached elements
 const playerDrawBtn = document.querySelector('#playerDrawBtn');
-
+const changeTurn = document.querySelector('#stayBtn');
 
 
 // functions
@@ -46,6 +47,10 @@ const dealACard = () => {
   console.log(playerTotal);
 };
 
+const switchToDealer = () => {
+    playerTurn = false;
+}
+
 // basic logic for playerTotal
 // playerTotal = playerTotal + currentDraw
 
@@ -53,3 +58,4 @@ const dealACard = () => {
 
 // event listeners
 playerDrawBtn.addEventListener('click', dealACard);
+changeTurn.addEventListener('click', switchToDealer);
